@@ -61,6 +61,8 @@ class PersonController extends Controller
     public function show($id)
     {
         //
+        $person = Person::find($id);
+        return view('person_profile')->with('person', $person);
     }
 
     /**
