@@ -24,6 +24,7 @@
                             <div class="container">
                                 <div class="row justify-content-center">
                                     <div class="col-md-4 text-center">
+                                    <a class="btn btn-secondary btn-block" style="margin-bottom: 5px;" href="{{url('persons')}}">&larr; Back to registry</a>
                                         <div class="card">
                                             <div class="card-body">
                                                 <img src="https://unsplash.it/300/300" style="width: 250px; margin: 0 auto; display: block; float: none; border-radius: 5px;"/>
