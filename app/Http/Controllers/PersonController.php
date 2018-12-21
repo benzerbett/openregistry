@@ -72,6 +72,8 @@ class PersonController extends Controller
     public function edit($id)
     {
         //
+        $person = Person::find($id);
+        return view('edit_person')->with('person', $person);
     }
 
     /**
@@ -94,6 +96,11 @@ class PersonController extends Controller
     public function destroy($id)
     {
         //
+        $person = Person::findOrFail($id);
+
+        $person->delete();
+
+        return redirect('/')->with('status', 'Person has been deleted Successfully');
     }
 
 

@@ -17,3 +17,5 @@ Route::get('/', 'PersonController@index')->name('people_list');
 Route::get('/home', 'PersonController@index')->name('people_list');
 Route::resource('persons', 'PersonController');
 Route::post('person/create', 'PersonController@new');
+Route::post('person/edit', 'PersonController@change');
+Route::post('person/delete', 'PersonController@destroy');
