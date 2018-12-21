@@ -15,7 +15,7 @@
                     @endif
 
                     @if(count($persons)> 0)
-                        <table class="table">
+                        <table class="table table-condensed table-hover table-striped">
                             <thead>
                                 <tr>
                                     <th>UID</th>
@@ -38,7 +38,7 @@
                                     <td>{{$person->dob}}</td>
                                     <td>
                                         <div class="dropdown open">
-                                            <button class="btn btn-secondary dropdown-toggle" type="button" id="actionsL" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</button>
+                                            <button class="btn btn-primary btn-sm dropdown-toggle" type="button" id="actionsL" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</button>
                                             <div class="dropdown-menu" aria-labelledby="actionsL">
                                                 <a class="dropdown-item" href="persons/{{$person->id}}">View</a>
                                                 <a class="dropdown-item" href="persons/{{$person->id}}/edit">Edit</a>
