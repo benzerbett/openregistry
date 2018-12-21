@@ -115,7 +115,7 @@ class PersonController extends Controller
 
         $person->delete();
 
-        return back()->with('status', 'Person has been deleted Successfully');
+        return redirect('persons')->with('status', 'Person has been deleted Successfully');
     }
 
 
@@ -125,6 +125,6 @@ class PersonController extends Controller
         $this->validate($request, [ 'uid' => 'required', 'fname' => 'required', 'sname', 'lname' => 'required', 'email' => 'required|email', 'phone', 'govid', 'gender', 'dob' ]);
             Person::create($request->all());
 
-            return back()->with('status', 'You have successfully added a new person');
+            return redirect('persons')->with('status', 'You have successfully added a new person');
     }
 }

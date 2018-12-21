@@ -42,11 +42,7 @@
                                             <div class="dropdown-menu" aria-labelledby="actionsL">
                                                 <a class="dropdown-item" href="persons/{{$person->id}}">View</a>
                                                 <a class="dropdown-item" href="persons/{{$person->id}}/edit">Edit</a>
-                                                <form action="{{ url('persons', $person->id)}}" method="post">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button class="dropdown-item" type="submit">Delete</button>
-                                                </form>
+                                                <button type="button" class="dropdown-item" data-toggle="modal" data-target="#dlUser{{$person->id}}Modal">Delete</button>
                                             </div>
                                         </div>
                                     </td>
@@ -54,6 +50,33 @@
                                 @endforeach
                             </tbody>
                         </table>
+
+                        @foreach($persons as $person)
+                            <!-- Modal -->
+                            <div class="modal fade" id="dlUser{{$person->id}}Modal" tabindex="-1" role="dialog" aria-labelledby="dlUser{{$person->id}}Title" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                        <h5 class="modal-title">Delete {{$person->fname}}</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Are you sure you want to delete <strong>{{$person->fname}} {{$person->lname}}</strong> completely?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">No, Cancel</button>
+                                            <form action="{{ url('persons', $person->id)}}" method="post">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button class="btn btn-danger" type="submit">Yes, Delete</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
                     @else
                         <div class="alert alert-warning" role="alert">
                             No persons added yet. Add one <a class="btn btn-primary" href="{{url('persons/create')}}">now</a>
