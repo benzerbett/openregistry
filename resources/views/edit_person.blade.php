@@ -14,7 +14,7 @@
                 @endif
 
                 <div class="card-body">
-                    <form method="post" action="{{url('person/change')}}" enctype="multipart/form-data">
+                    <form method="post" action="{{url('person/update')}}" enctype="multipart/form-data">
                         {{csrf_field()}}
 
                         <div class="form-group {{ $errors->has('fname') ? 'has-error' : '' }}">
