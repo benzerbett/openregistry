@@ -68,7 +68,7 @@
                             <span class="text-danger">{{ $errors->first('dob') }}</span>
                         </div>
 
-                        <input type="hidden" required value="{{substr(csrf_field(), 0, 12)}}" name="uid"/>
+                        <input type="hidden" required value="{{substr(base64_encode(csrf_field()), 0, 12)}}" name="uid"/>
 
                         <div class="form-group">
                             <button class="btn btn-success">Save</button>

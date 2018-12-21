@@ -100,7 +100,7 @@ class PersonController extends Controller
 
         $person->delete();
 
-        return redirect('/')->with('status', 'Person has been deleted Successfully');
+        return back()->with('status', 'Person has been deleted Successfully');
     }
 
 

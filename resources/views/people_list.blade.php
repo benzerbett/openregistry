@@ -41,8 +41,8 @@
                                             <button class="btn btn-secondary dropdown-toggle" type="button" id="actionsL" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</button>
                                             <div class="dropdown-menu" aria-labelledby="actionsL">
                                                 <a class="dropdown-item" href="profile/{{$person->id}}">View</a>
-                                                <a class="dropdown-item" href="persons/edit/{{$person->id}}">Edit</a>
-                                                <form action="{{ url('person/delete', $person->id)}}" method="post">
+                                                <a class="dropdown-item" href="persons/{{$person->id}}/edit">Edit</a>
+                                                <form action="{{ url('persons', $person->id)}}" method="post">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button class="dropdown-item" type="submit">Delete</button>
