@@ -82,9 +82,24 @@ class PersonController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update($id)
+    public function update(Request $request, $id)
     {
         //
+        $request->validate([ 'uid' => 'required', 'fname' => 'required', 'sname', 'lname' => 'required', 'email' => 'required|email', 'phone', 'govid', 'gender', 'dob' ]);
+
+          $person = Person::find($id);
+          $person->uid = $request->get('uid');
+          $person->fname = $request->get('fname');
+          $person->sname = $request->get('sname');
+          $person->lname = $request->get('lname');
+          $person->email = $request->get('email');
+          $person->phone = $request->get('phone');
+          $person->govid = $request->get('govid');
+          $person->gender = $request->get('gender');
+          $person->dob = $request->get('dob');
+          $person->save();
+
+          return redirect('persons')->with('status', 'Person has been edited successfully');
     }
 
     /**

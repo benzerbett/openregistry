@@ -14,9 +14,9 @@
                 @endif
 
                 <div class="card-body">
-                    <form method="post" action="{{url('person/update')}}" enctype="multipart/form-data">
-                        {{csrf_field()}}
-
+                    <form method="post" action="{{ route('persons.update', $person->id) }}">
+                    @method('PATCH')
+                    @csrf
                         <div class="form-group {{ $errors->has('fname') ? 'has-error' : '' }}">
                             <label class="control-label">First Name</label>
                         <input type="text" name="fname" required value="{{$person->fname}}" class="form-control" placeholder="First Name"/>
