@@ -1,3 +1,15 @@
 .text-bold{
     font-weight: bold !important;
 }
+a,
+a:hover{
+    color: #364699;
+}
+.btn-primary{
+    background: #364699;
+}
+.navbar-light .navbar-nav .nav-link.btn-primary{
+    color: #fff !important;
+    padding: .35rem .8rem !important;
+    margin-right: 7px;
+}

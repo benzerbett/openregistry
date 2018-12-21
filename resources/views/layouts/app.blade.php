@@ -18,7 +18,7 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -55,7 +55,7 @@
                             @endif
                         @else
                             <li class="nav-item">
-                                <a class="nav-link btn btn-success btn-xs" href="{{ url('persons/create') }}">+ New Person</a>
+                                <a class="nav-link btn btn-primary btn-xs" href="{{ url('persons/create') }}">+ New Person</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

@@ -77,7 +77,7 @@
                         <input type="hidden" required value="{{substr(base64_encode(csrf_field()), 0, 12)}}" name="uid"/>
 
                         <div class="form-group">
-                            <button class="btn btn-success">Update</button>
+                            <button class="btn btn-primary">Save</button>
                         </div>
 
                     </form>

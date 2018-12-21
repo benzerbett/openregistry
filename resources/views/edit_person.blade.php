@@ -77,7 +77,7 @@
                     <input type="hidden" required value="{{$person->uid}}" name="uid"/>
 
                         <div class="form-group">
-                            <button class="btn btn-success">Save</button>
+                            <button class="btn btn-primary">Update</button>
                         </div>
 
                     </form>
